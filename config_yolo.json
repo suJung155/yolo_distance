@@ -1,0 +1,26 @@
+{
+  "engine": "cpu",
+  "source": "camera",  
+  "camera_number": 0,
+  "model_path": "yolov8x.pt",
+  "model": "yolov8x.pt",
+  "input_size": [640, 640],
+  "fov_degree": 50.0,
+  "fov_correction_factor": 1.5,
+  "num_classes": 80,
+  "dataset": "COCO",
+  "distance_mode": "auto", 
+  "use_width": true,       
+  "class_sizes_file": "class_sizes.json",
+  "label_overrides_mm": {
+    "person": { "height_mm": 1700, "width_mm": 500 },
+    "bicycle": { "height_mm": 1100, "width_mm": 1700 },
+    "car": { "height_mm": 1500, "width_mm": 4200 },
+    "bus": { "height_mm": 3000, "width_mm": 12000 },
+    "truck": { "height_mm": 3200, "width_mm": 12000 },
+    "motorcycle": { "height_mm": 1100, "width_mm": 2200 },
+    "chair": { "height_mm": 1000, "width_mm": 500 },
+    "tv": { "height_mm": 700, "width_mm": 1200 }
+  }
+}
+
