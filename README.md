@@ -9,15 +9,36 @@ YOLO로 검출된 객체에 대해 카메라 FOV 기반으로 거리를 추정�
 - `requirements.txt`: 의존성
 
 ## 설치
+
+### CPU (권장)
 ```
 cd distance_yolo
 python -m pip install -r requirements.txt
 ```
 
+### GPU (CUDA 12.1 예시)
+NVIDIA 드라이버와 CUDA 12.1 환경이 준비되어 있다면 아래처럼 설치하세요.
+```
+cd distance_yolo
+python -m pip install -r requirements-gpu-cu121.txt
+```
+주의: 다른 CUDA 버전(예: cu118)을 사용한다면 해당 버전에 맞는 PyTorch 인덱스/빌드를 사용하세요.
+
 ## 실행
+
+### CPU 실행
 ```
 python yolo_distance.py
 ```
+
+### GPU 실행
+`config_yolo.json`에 `device`를 설정하세요. 예)
+```json
+{
+  "device": "cuda:0"
+}
+```
+혹은 `yolo_distance_gpu.py`는 내부에서 자동으로 `cuda` 사용 가능 여부를 감지합니다.
 
 ## 설정 (config_yolo.json)
 - `engine`: "cpu"
